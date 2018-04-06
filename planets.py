@@ -12,3 +12,4 @@ def get_planet_names(content:str) -> list:
                 for r in result:
                         planets.append(r[1])
         return planets
+
