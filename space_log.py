@@ -29,4 +29,9 @@ try:
 except IndexError:
 	exit("Missing search argument.")
 
-print(func(content))
+output = func(content)
+if type(output) is list:
+	for l in output:
+		print(l)
+else:
+	print(output)
