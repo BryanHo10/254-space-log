@@ -1,10 +1,10 @@
+
 #!/usr/bin/env python3
 #
 # Use like `./space_log.py -s|-p|-t|-d|-f log_file
 
 from sys import argv
-
-import fuel, terra, planets, lightyear
+import fuel, terra, lightyear, planets
 
 # Opens the log file and grabs the contents.
 try:
@@ -36,3 +36,4 @@ if type(output) is list:
 		print(l)
 else:
 	print(output)
+
