@@ -3,8 +3,9 @@
 # Use like `./space_log.py -s|-p|-t|-d|-f log_file
 
 from sys import argv
-import fuel
-import lightyear
+
+import fuel, terra, planets, lightyear
+
 # Opens the log file and grabs the contents.
 try:
 	fh = open(argv[1], 'r')
@@ -18,8 +19,8 @@ except:
 # Uncomment, and add your work in the appropriate spots.
 argSwitcher = {
 #	'-s': NAMES OF SYSTEMS VISITED
-#	'-p': NAMES OF PLANETS SCANNED
-#	'-t': TOTAL NUMBER OF TERRAFORMABLE PLANETS SCANNED
+	'-p': planets.get_planet_names,
+	'-t': terra.get_total_terraformable,
 	'-d': lightyear.get_lightyears,
 	'-f': fuel.get_total_fuel,	# The example.
 }
@@ -29,4 +30,9 @@ try:
 except IndexError:
 	exit("Missing search argument.")
 
-print(func(content))
+output = func(content)
+if type(output) is list:
+	for l in output:
+		print(l)
+else:
+	print(output)
