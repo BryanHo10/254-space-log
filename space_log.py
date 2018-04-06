@@ -3,7 +3,8 @@
 # Use like `./space_log.py -s|-p|-t|-d|-f log_file
 
 from sys import argv
-import fuel, terra, planets
+
+import fuel, terra, planets, lightyear
 
 # Opens the log file and grabs the contents.
 try:
@@ -20,7 +21,7 @@ argSwitcher = {
 #	'-s': NAMES OF SYSTEMS VISITED
 	'-p': planets.get_planet_names,
 	'-t': terra.get_total_terraformable,
-#	'-d': TOTAL DISTANCE IN LIGHT YEARS
+	'-d': lightyear.get_lightyears,
 	'-f': fuel.get_total_fuel,	# The example.
 }
 
