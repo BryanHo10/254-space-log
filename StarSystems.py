@@ -5,4 +5,10 @@ import re
 def getStarSystems():
 	starsfound = re.compile("\Stars Visited\": (\alnum+\.\alnum+)")
 	result = starsfound.findall(content)
-	print(result)
+	stars = []
+	if result:
+		for r in result:
+			stars.append(r)
+		print(result)
+	return stars
+
