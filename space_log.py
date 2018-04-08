@@ -1,10 +1,9 @@
-
 #!/usr/bin/env python3
 #
 # Use like `./space_log.py -s|-p|-t|-d|-f log_file
 
 from sys import argv
-import fuel, terra, lightyear, planets
+import fuel, terra, lightyear, planets, starsystems
 
 # Opens the log file and grabs the contents.
 try:
@@ -18,7 +17,7 @@ except:
 
 # Uncomment, and add your work in the appropriate spots.
 argSwitcher = {
-#	'-s': NAMES OF SYSTEMS VISITED
+	'-s': starsystems.getStarSystems,
 	'-p': planets.get_planet_names,
 	'-t': terra.get_total_terraformable,
 	'-d': lightyear.get_lightyears,
@@ -36,4 +35,3 @@ if type(output) is list:
 		print(l)
 else:
 	print(output)
-
